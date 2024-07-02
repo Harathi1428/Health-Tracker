@@ -1,0 +1,70 @@
+
+.sec1{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: chan 0.5s ease forwards;
+}
+.sign form p{
+color:white;
+}
+.success-message{
+    background-color: rgb(76, 164, 76);
+    display:flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    padding:10px;
+}
+.sign{
+    background:  linear-gradient(rgb(26, 147, 187),rgb(8, 8, 70));
+    width: 30%;
+    padding: 10px;
+    min-width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: chan 0.5s ease forwards;
+}
+input{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 90%;
+}
+label{
+    font-size: large;
+}
+.btn{
+    padding: 13px;
+    font-size: large;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: rgba(0, 0, 0, 0.744);
+}
+.btn:hover{
+    background: rgb(26, 147, 187);
+    color: white;
+}
+span{
+    color: rgb(81, 158, 230);
+    font-size: larger;
+    cursor: pointer;
+}
+@keyframes chan{
+  0%{
+    opacity:0;
+    transform: scale(0.8);
+  }
+  100%{
+    opacity:1;
+    transform: scale(1);
+  }
+}

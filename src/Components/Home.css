@@ -1,0 +1,37 @@
+.App{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:10%;
+    opacity:0;
+    color:white;
+    animation: chang 4s forwards;
+  }
+  @keyframes chang{
+    from{
+      opacity:0;
+    }
+    to{
+      opacity:1;
+    }
+  }
+  .App h1{
+    text-align: center;
+    font-size: 200%;
+    color:Beige;
+  }
+  .App h3{
+    font-size: larger;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 30px;
+    color:white;
+  }
+  .btn1{
+    padding:10px;
+    border-radius: 10px;
+    font-size: large;
+  }
+  .btn1:hover{
+     background: rgb(99, 168, 192);
+  }

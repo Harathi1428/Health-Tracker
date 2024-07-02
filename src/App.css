@@ -1,38 +1,139 @@
-.App {
-  text-align: center;
+/* body{
+  background: url('./images/med.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color:white;
+} */
+.App1{
+  background: url('./images/med.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height:100vh;
+  background-attachment: fixed;
+  color:white;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* .navbar{
+  padding:3px;
+  display:flex;
+  align-items: center;
+  justify-content:space-around;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar .act{
+  color:whitesmoke;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar .active{
+  font-size: larger;
+  font-weight: bold;
+}
+.navbar .act:hover{
+  color:cyan;
+  font-size: larger;
+  font-weight: bold;
+  text-decoration: underline;
+} 
+.App{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:10%;
+  opacity:0;
+  animation: chang 3s forwards;
+}
+@keyframes chang{
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+}
+.App h1{
+  text-align: center;
+  font-size: 200%;
+  color:Beige;
+}
+.App h3{
+  font-size: larger;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  line-height: 30px;
+}
+ .main{
+  position:relative;
+} 
+.footer{
+  text-align: center;
+  padding-top: 5px;
+} 
+ .log{
+  background: white;
+  width: 45%;
+  height:150%;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:black
+}
+.stat{
+  text-align: center;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+  @keyframes chan{
+    0%{
+      opacity:0;
+      transform: scale(0.8);
+    }
+    100%{
+      opacity:1;
+      transform: scale(1);
+    }
+  }
+ .log h1{
+  font-size: 200%;
+  color:rgb(6, 6, 62);
+} 
+
+.sec{
+  padding:6%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: chan 0.5s ease forwards;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn:hover{
+  background: rgb(114, 167, 185);
 }
+.bn:hover{
+  background: rgb(114, 167, 185);
+} 
+.bn{
+  width:200%;
+  height:30px;
+}
+.btn1{
+  width:150%;
+  height:40px;
+  font-size: large;
+  text-align: center;
+  outline: none;
+  border:transparent;
+  border-radius: 10px;
+  background: rgb(116, 177, 198);
+  margin-top: 30px;
+}
+
+/* .abt{
+  background:rgb(4, 28, 84);
+} */  
