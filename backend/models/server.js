@@ -5,12 +5,13 @@ const user=require('./user');
 const worker=require('./workers');
 
 const app=express();
-const port=3001
+const port=process.env.port
+const portcs=process.env.cs
 
 app.use(express.json());
 app.use(cors())
 
-mongoose.connect('mongodb://127.0.0.1:27017/Users', {
+mongoose.connect(portcs, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
