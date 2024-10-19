@@ -10,7 +10,7 @@ function Login(){
     const navigate=useNavigate()
     const handleSubmit=(e)=>{
         e.preventDefault()
-        axios.post('http://localhost:3001/login',{email,password})
+        axios.post('https://health-tracker-2.onrender.com/login',{email,password})
         .then(response=>{console.log(response)
             if(response.data.message=== 'Success'){
                 alert('Login successful');

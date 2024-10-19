@@ -22,7 +22,7 @@ const View = () => {
     useEffect(() => {
         console.log("useEffect", userId);
         if (userId) {
-            axios.get(`http://localhost:3001/workouts/${userId}`)
+            axios.get(`hhttps://health-tracker-2.onrender.com/workouts/${userId}`)
                 .then(response => {
                     console.log(response.data,userId);
                     setWorkouts(response.data);

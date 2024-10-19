@@ -12,7 +12,7 @@ function Signup(){
     const navigate=useNavigate()
     const handleSubmit=(e)=>{
         e.preventDefault()
-        axios.post('http://localhost:3001/signup',{username,email,password})
+        axios.post('https://health-tracker-2.onrender.com/signup',{username,email,password})
         .then(result=>{
             const userId = result.data.userId;
             // console.log(userId)
