@@ -22,7 +22,6 @@ const DateSelector = () => {
       // setDateValue('');
     };
 
-
 const handleSubmit = (event) => {
   const userId=localStorage.getItem('userId');
   event.preventDefault();
@@ -44,8 +43,11 @@ const handleSubmit = (event) => {
       <div className="main">
         {state ==='show'?
       <div className="date">
+        <div>
           <h4>Select Date to add workout:</h4>
           <input type="date" value={selectedDate} onChange={handleDateChange} />
+          </div>
+          <div className='dwn'>
           {
           selectedDate ? (
               <button onClick={()=>setState(false)}>Add Workout</button>
@@ -53,6 +55,7 @@ const handleSubmit = (event) => {
             <button onClick={() => alert('Please select a date first.')}>Add Workout</button>
           )}
           <Link to="/workouts" ><button>View Workouts</button></Link>
+          </div>
       </div>:
     <form onSubmit={handleSubmit}>
       <div className='main2'>
@@ -78,6 +81,9 @@ const handleSubmit = (event) => {
       <button type="button" onClick={handleClose}>Close</button></div>
       </div>
     </form>}
+    <div className='vec'>
+    <img src="./images/imag.png" alt="imag"/>
+        </div>
   </div>
     );
   };

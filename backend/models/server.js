@@ -3,22 +3,27 @@ const mongoose = require('mongoose');
 const cors=require('cors');
 const user=require('./user');
 const worker=require('./workers');
+require('dotenv').config();
+
 
 const app=express();
 const port=process.env.port
-const portcs=process.env.cs
+const connection_string=process.env.cs
 
 app.use(express.json());
 app.use(cors())
 
-mongoose.connect(portcs, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => {
-    console.log("Users database connected");
-}).catch((err) => {
-    console.error("Users database connection error:", err);
-});
+mongoose.connect(connection_string)
+  .then(() => console.log("Connected to MongoDB Atlas"))
+  .catch((error) => console.error("Connection error", error));
+
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// }).then(() => {
+//     console.log("Users database connected");
+// }).catch((err) => {
+//     console.error("Users database connection error:", err);
+// });
 
 app.post("/signup", async (req, res) => {
     const { username, email, password } = req.body;
@@ -28,8 +33,9 @@ app.post("/signup", async (req, res) => {
         password, 
     });
     try {
-        // const savedUser = await newUser.save();
+        const savedUser = await newUser.save();
         res.status(201).json({ userId: newUser._id });
+        console.log("created",savedUser)
     } catch (error) {
         console.error("Error creating user:", error);
         res.status(500).send({ message: 'Error creating user' });
@@ -37,19 +43,42 @@ app.post("/signup", async (req, res) => {
 });
 
 app.post("/login", async (req, res) => {
-    const { email} = req.body;
-    try {
-        const person = await user.findOne({ email });
-        if (!person) {
-            return res.status(400).json({ message: 'Invalid email or password' });
+    const { email,password} = req.body;
+    user.findOne({ email: email })
+    .then(user => {
+        if (user) {
+          if (user.password === password) {
+            console.log("Login success:", user);
+            res.json({
+                message: "Success",
+                userId: user._id // Send the user's id from MongoDB
+            });
+          } else {
+            console.log("Incorrect password for:", email);
+            res.json("Password is incorrect");
+          }
+        } else {
+          console.log("No user found with email:", email);
+          res.json("No such record exist");
         }
-        console.log(person._id)
-        res.status(200).json({ userId: person._id });
-    } catch (error) {
-        console.error("Error logging in:", error);
+      })
+
+
+
+        // if (!person) {
+        //     return res.status(400).json({ message: 'Invalid email or password' });
+        // }
+        // else{
+        //     res.json("Success");
+        //     res.status(200).json({ userId: person._id });
+
+        // }
+     .catch (err => {
+        console.error("Error logging in:", err);
         res.status(500).json({ message: 'Error logging in' });
+     })
     }
-});
+);
 app.post('/worker',async(req,res)=>{
     const { userId,Steps, Calories, Distance, Weight, selectedDate } = req.body;
     console.log("Received data:", req.body);
@@ -144,4 +173,3 @@ app.get('/workouts/:userId', async (req, res) => { // Use app.get instead of app
 // app.listen(port, () => {
 //     console.log(`Server is running on port ${port}`);
 // });
-

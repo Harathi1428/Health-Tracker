@@ -56,11 +56,11 @@ function Signup(){
             </div><br></br><br></br>
             <div className="bns">
             {state==='SignUp'?
-            <div><center>
+            <div className="btnm"><center>
             <button className="btn" type="submit">Signup</button></center>
             <p>Already have an account?<Link to="/login"><span onClick={()=>{setState('Login')}}> Log in here</span></Link></p>
             </div>:
-            <div>
+            <div className="btnm">
                 <center>
             <button className="btn" type="submit">Log In</button></center>
             <p>Create an account ?<Link to="/signup"><span onClick={()=>{setState('SignUp')}}> Signup here.</span></Link></p>

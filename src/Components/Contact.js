@@ -2,8 +2,9 @@ import Nav from './Nav.js'
 import './Contact.css';
 function Contact(){
     return(
-        <div className="contact">
+        <div className="contact1">
             <Nav/>
+            <div className='contact'>
             <div class="contact-container">
         <h1>Contact Us</h1>
         <form>
@@ -22,6 +23,10 @@ function Contact(){
             <button type="submit">Submit</button>
         </form>
     </div>
+    <div className='vec'>
+        <img src="./images/work.jpg" alt="imag"/>
+        </div>
+        </div>
     </div>
     );
 }

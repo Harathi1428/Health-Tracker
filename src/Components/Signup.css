@@ -7,6 +7,9 @@
     flex-direction: column;
     animation: chan 0.5s ease forwards;
 }
+.head{
+    color:white;
+}
 .sign form p{
 color:white;
 }
@@ -40,6 +43,12 @@ input{
 }
 label{
     font-size: large;
+}
+.btnm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .btn{
     padding: 13px;

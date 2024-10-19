@@ -6,6 +6,8 @@
     align-items: center;
     color: black;
     padding: 10px 0;
+    position: relative;
+    z-index: 1;
 }
 
 .mainnav {

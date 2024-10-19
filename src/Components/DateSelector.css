@@ -1,4 +1,4 @@
-.date{
+/* .date{
     animation:chan 0.5s ease forwards;
     background-color: lightblue;
     display: flex;
@@ -7,21 +7,28 @@
     line-height: 2px;
     border-radius: 10%;
 }
+.vec{
+  width:50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vec img{
+  width:80%;
+  height: auto;
+}
 .main{
   display: flex;
   align-items: center;
-   /* justify-items: center; */
-  top: 0px;
+  gap:20px;
   justify-content: center; 
   flex-direction: row;
   background-color: white;
   animation:chan 0.5s ease forwards;
-  padding:10px;
   color:black;
-  /* margin-top: 2px; */
+  top:1px;
   width:800%;
   height:100vh;
-  line-height: 1px;
 }
 .bts{
   display:flex;
@@ -62,4 +69,114 @@ button:hover{
       opacity:1;
       transform: scale(1);
     }
-  }
+  } */
+  .date {
+    animation: chan 0.5s ease forwards;
+    background-color: lightblue;
+    display: flex;
+    padding: 60px;
+    flex-direction: column;
+    line-height: 2px;
+    border-radius: 10%;
+}
+
+.vec {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vec img {
+    width: 80%;
+    height: auto;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: row;
+    background-color: white;
+    animation: chan 0.5s ease forwards;
+    color: black;
+    width: 100%;
+    height: 100vh;
+}
+.dwn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main2 {
+    background-color: lightblue;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    animation: chan 0.5s ease forwards;
+}
+
+.main2 input {
+    width: 200px;
+}
+
+button {
+    padding: 13px;
+    font-size: large;
+    border-radius: 10px;
+    border: none;
+    min-width: 80px;
+    outline: none;
+    margin: 20px;
+    color: rgba(0, 0, 0, 0.744);
+}
+
+button:hover {
+    background-color: rgb(108, 150, 164);
+}
+
+@keyframes chan {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .date, .main2 {
+        width: 90%;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .vec {
+        width: 100%;
+    }
+
+    .vec img {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .main2 input {
+        width: 90%;
+    }
+}

@@ -12,13 +12,23 @@ function Login(){
         e.preventDefault()
         axios.post('http://localhost:3001/login',{email,password})
         .then(response=>{console.log(response)
-            if(response.data){
+            if(response.data.message=== 'Success'){
+                alert('Login successful');
                 console.log(response)
                 const userId = response.data.userId;
                 localStorage.setItem('userId', userId);
                 navigate('/Works')
             }
+            else if (response.data === 'Password is incorrect')
+                {
+                  alert('Check your password!!');
+                }
+                else if (response.data === 'No such record exist')
+                {
+                  alert('No such user found!!');
+                }
             else{
+                alert('Invalid email or password');
                 console.log(response.data)
                 console.log("error login")
             }    
@@ -44,11 +54,11 @@ function Login(){
             <br></br><br></br>
             <div className="bns">
             {state==='SignUp'?
-            <div><center>
+            <div className="btnm"><center>
             <button className="btn" type="submit">Signup</button></center>
             <p>Already have an account?<Link to="/login"><span onClick={()=>{setState('Login')}}> Log in here</span></Link></p>
             </div>:
-            <div>
+            <div className="btnm">
                 <center>
             <button className="btn" type="submit">Log In</button></center>
             <p>Create an account ?<Link to="/signup"><span onClick={()=>{setState('SignUp')}}> Signup here.</span></Link></p>

@@ -8,6 +8,12 @@
     color:white;
     animation: chang 4s forwards;
   }
+  .sec0{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   @keyframes chang{
     from{
       opacity:0;
